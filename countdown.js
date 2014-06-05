@@ -138,23 +138,23 @@
         if( initAmount < 10*60 ){
             // return的render函数也会作为this的方法, 所以this仍会指向Countdown对象
             return function( left ){
-                this.ele.minute.innerText = Math.floor(left/60);
-                this.ele.second.innerText = makeDouble(left%60);
+                this.ele.minute.innerHTML = Math.floor(left/60);
+                this.ele.second.innerHTML = makeDouble(left%60);
             }
         }
         // else if( initAmount >= 10*60 &&  ){
         else{
             if( this.ele.hour ){
                 return function( left ){
-                    self.ele.hour.innerText = Math.floor(left/3600);
-                    self.ele.minute.innerText = makeDouble(Math.floor((left%3600)/60));
-                    self.ele.second.innerText = makeDouble(left%60);
+                    self.ele.hour.innerHTML = Math.floor(left/3600);
+                    self.ele.minute.innerHTML = makeDouble(Math.floor((left%3600)/60));
+                    self.ele.second.innerHTML = makeDouble(left%60);
                 }
             }
             else{
                 return function( left ){
-                    self.ele.minute.innerText = makeDouble(Math.floor(left/60));
-                    self.ele.second.innerText = makeDouble(left%60);
+                    self.ele.minute.innerHTML = makeDouble(Math.floor(left/60));
+                    self.ele.second.innerHTML = makeDouble(left%60);
                 }
             }
         }
